@@ -1,35 +1,27 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { LinearGradient } from "expo-linear-gradient";
+import React from "react";
+import { ImageBackground, StyleSheet } from "react-native";
+import HomeScreen from ".";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+    <LinearGradient colors={["#E44631", "#ddb52f"]} style={styles.appContainer}>
+      <ImageBackground
+        style={styles.appContainer}
+        source={require("../../assets/images/riho-kroll-m4sGYaHYN5o-unsplash.jpg")}
+        resizeMode="cover"
+        imageStyle={styles.backgroundImage}
+      >
+        <HomeScreen />
+      </ImageBackground>
+    </LinearGradient>
   );
 }
+const styles = StyleSheet.create({
+  appContainer: {
+    flex: 1,
+  },
+  backgroundImage:{
+    opacity:0.25
+  }
+});
