@@ -2,31 +2,45 @@ import { ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type PrimaryButtonProps = {
-    children: ReactNode
+  children: ReactNode;
+};
+function pressHandler() {
+  console.log("pressed!");
 }
-function pressHandler(){
-    console.log('pressed!')
-}
-export default function PrimaryButton({children}:PrimaryButtonProps) {
+export default function PrimaryButton({ children }: PrimaryButtonProps) {
   return (
-    <Pressable onPress={pressHandler}>
-    <View style={styles.buttonContainer}>
-      <Text style={styles.textButton}>{children}</Text>
+    <View style={styles.buttonOuterContainer}>
+      <Pressable
+        style={({ pressed }) =>
+          pressed
+            ? [styles.buttonInnerContainer, styles.pressed]
+            : styles.buttonInnerContainer
+        }
+        onPress={pressHandler}
+      >
+        <Text style={styles.textButton}>{children}</Text>
+      </Pressable>
     </View>
-    </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-    buttonContainer:{
-        backgroundColor:'#850545ff',
-        borderRadius:28,
-        paddingVertical:8,
-        paddingHorizontal:16,
-        margin:4
-    },
-    textButton:{
-        color:'white',
-        textAlign:'center'
-    }
+  buttonOuterContainer: {
+    borderRadius: 28,
+    margin: 4,
+    overflow: "hidden",
+  },
+  buttonInnerContainer: {
+    backgroundColor: "#bc0e65ff",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    elevation: 2,
+  },
+  textButton: {
+    color: "white",
+    textAlign: "center",
+  },
+  pressed: {
+    opacity: 0.75,
+  },
 });

@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View } from "react-native";
 
 export default function StartGameScreen() {
   return (
-    <View style={styles.inputOuterContainer}>
+    <View style={styles.inputContainer}>
       <TextInput
         style={styles.numberInput}
         maxLength={2}
@@ -18,7 +18,7 @@ export default function StartGameScreen() {
 }
 
 const styles = StyleSheet.create({
-  inputOuterContainer: {
+  inputContainer: {
     marginTop: "25%",
     marginHorizontal: 24,
     padding: 16,
