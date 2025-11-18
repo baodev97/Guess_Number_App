@@ -3,21 +3,19 @@ import { StyleSheet, TextInput, View } from "react-native";
 
 export default function StartGameScreen() {
   return (
-    <View style={styles.inputOuterContainer}>
-      <View style={styles.inputInnerContainer}>
-        <TextInput
-          style={styles.numberInput}
-          maxLength={2}
-          keyboardType="number-pad"
-          autoCorrect={false}
-          autoCapitalize="none"
-        ></TextInput>
-      </View>
-      <View style={styles.buttonContainer}>
-        <View style={styles.buttonInnerContainer}>
+    <View style={styles.inputContainer}>
+      <TextInput
+        style={styles.numberInput}
+        maxLength={2}
+        keyboardType="number-pad"
+        autoCorrect={false}
+        autoCapitalize="none"
+      ></TextInput>
+      <View style={styles.buttonsContainer}>
+        <View style={styles.buttonContainer}>
           <PrimaryButton>Reset</PrimaryButton>
-        </View >
-        <View style={styles.buttonInnerContainer}>
+        </View>
+        <View style={styles.buttonContainer}>
           <PrimaryButton>Confirm</PrimaryButton>
         </View>
       </View>
@@ -26,7 +24,9 @@ export default function StartGameScreen() {
 }
 
 const styles = StyleSheet.create({
-  inputOuterContainer: {
+  inputContainer: {
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: "25%",
     marginHorizontal: 24,
     padding: 24,
@@ -38,10 +38,6 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOpacity: 0.25,
   },
-  inputInnerContainer: {
-    alignItems: "center",
-    marginBottom: 8,
-  },
   numberInput: {
     height: 70,
     width: 50,
@@ -51,12 +47,12 @@ const styles = StyleSheet.create({
     color: "#ddb52f",
     fontWeight: "bold",
     textAlign: "center",
+    marginBottom: 8,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
   },
   buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
+    flex: 1,
   },
-  buttonInnerContainer:{
-    width:120
-  }
 });

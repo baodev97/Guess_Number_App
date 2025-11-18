@@ -1,18 +1,20 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import HomeScreen from '.';
+
 
 export default function TabLayout() {
   return (
-    <View style={styles.appContainer}>
+    <LinearGradient colors={['#E44631','#ddb52f']} style={styles.appContainer}>
     <HomeScreen/>
-    </View>
+    </LinearGradient>
   );
 }
 const styles = StyleSheet.create({
   appContainer:{
     flex:1,
     padding:8,
-    backgroundColor:"#E44631"
+    // backgroundColor:"#E44631"
   }
 })
