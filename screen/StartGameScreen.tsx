@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View } from "react-native";
 
 export default function StartGameScreen(){
     return (
-        <View>
+        <View style={styles.inputOuterContainer}>
             <TextInput></TextInput>
             <PrimaryButton>Reset</PrimaryButton>
             <PrimaryButton>Confirm</PrimaryButton>
@@ -12,12 +12,17 @@ export default function StartGameScreen(){
 }
 
 const styles = StyleSheet.create({
-  inputContainer: {
-    marginTop: 100,
-    marginVertical: 20,
-    padding: 8,
+  inputOuterContainer: {
+    marginTop: '25%',
+    marginHorizontal:24,
+    padding: 16,
     borderRadius: 8,
-    backgroundColor: "#8C142E",
+    backgroundColor: "#72063c",
+    elevation:48,
+    shadowColor:"black",
+    shadowOffset: {width: 0,height:2},
+    shadowRadius: 6,
+    shadowOpacity:0.25
   },
   textInputContainer: {
     borderBottomColor: "#E4DB31",

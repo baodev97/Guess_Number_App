@@ -6,10 +6,11 @@ type PrimaryButtonProps = {
 }
 export default function PrimaryButton({children}:PrimaryButtonProps) {
   return (
-    <View>
+    <View >
       <Text>{children}</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+});
