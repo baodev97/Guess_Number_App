@@ -1,7 +1,34 @@
-import PrimaryButton from "@/components/PrimaryButton";
-import { StyleSheet, TextInput, View } from "react-native";
+import PrimaryButton from "@/components/ui/PrimaryButton";
+import Colors from "@/constants/colors";
+import { useState } from "react";
+import { Alert, StyleSheet, TextInput, View } from "react-native";
+type StartGameScreenProps = {
+  handlerPickNumber:(pickNumber:number)=>void
+}
 
-export default function StartGameScreen() {
+
+
+export default function StartGameScreen({handlerPickNumber}:StartGameScreenProps) {
+  const [enterNumber, setEnterNumber] = useState("");
+  function handlerEnterNumber(enterNumber: string) {
+    setEnterNumber(enterNumber);
+    console.log("check flow");
+  }
+  console.log("check enterNumber", enterNumber);
+  function handlerReset() {
+    setEnterNumber("");
+    console.log("handler reset");
+  }
+  function handlerCofirm(enterNumber: string) {
+    const numberInput = parseInt(enterNumber);
+    if (isNaN(numberInput) || numberInput < 0 || numberInput > 99) {
+      Alert.alert("Number isn't valid", "Confirm",[{text:'OK', onPress:handlerReset}]);
+    }else{
+      handlerPickNumber(numberInput)
+    }
+    
+    console.log("confirm");
+  }
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -10,13 +37,17 @@ export default function StartGameScreen() {
         keyboardType="number-pad"
         autoCorrect={false}
         autoCapitalize="none"
+        value={enterNumber}
+        onChangeText={handlerEnterNumber}
       ></TextInput>
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
-          <PrimaryButton>Reset</PrimaryButton>
+          <PrimaryButton onPress={handlerReset}>Reset</PrimaryButton>
         </View>
         <View style={styles.buttonContainer}>
-          <PrimaryButton>Confirm</PrimaryButton>
+          <PrimaryButton onPress={() => handlerCofirm(enterNumber)}>
+            Confirm
+          </PrimaryButton>
         </View>
       </View>
     </View>
@@ -31,7 +62,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     padding: 24,
     borderRadius: 8,
-    backgroundColor: "#5e0431ff",
+    backgroundColor: Colors.primary800,
     elevation: 48,
     shadowColor: "black",
     shadowOffset: { width: 0, height: 2 },
@@ -42,9 +73,9 @@ const styles = StyleSheet.create({
     height: 70,
     width: 50,
     fontSize: 32,
-    borderBottomColor: "#ddb52f",
+    borderBottomColor: Colors.accent500,
     borderBottomWidth: 2,
-    color: "#ddb52f",
+    color: Colors.accent500,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 8,

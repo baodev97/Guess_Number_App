@@ -1,13 +1,16 @@
+import Colors from "@/constants/colors";
 import { ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type PrimaryButtonProps = {
   children: ReactNode;
+  onPress:()=> void
 };
-function pressHandler() {
-  console.log("pressed!");
-}
-export default function PrimaryButton({ children }: PrimaryButtonProps) {
+
+export default function PrimaryButton({ children, onPress}: PrimaryButtonProps) {
+  function handleronpress(){
+    onPress()
+  }
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
@@ -16,7 +19,7 @@ export default function PrimaryButton({ children }: PrimaryButtonProps) {
             ? [styles.buttonInnerContainer, styles.pressed]
             : styles.buttonInnerContainer
         }
-        onPress={pressHandler}
+        onPress={handleronpress}
       >
         <Text style={styles.textButton}>{children}</Text>
       </Pressable>
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   buttonInnerContainer: {
-    backgroundColor: "#bc0e65ff",
+    backgroundColor: Colors.primary500,
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 2,
