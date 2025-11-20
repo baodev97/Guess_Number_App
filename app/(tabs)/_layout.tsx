@@ -4,6 +4,8 @@ import { ImageBackground, StyleSheet } from "react-native";
 import HomeScreen from ".";
 
 export default function TabLayout() {
+  
+
   return (
     <LinearGradient colors={["#E44631", "#ddb52f"]} style={styles.appContainer}>
       <ImageBackground

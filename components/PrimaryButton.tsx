@@ -3,11 +3,13 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type PrimaryButtonProps = {
   children: ReactNode;
+  onPress:()=> void
 };
-function pressHandler() {
-  console.log("pressed!");
-}
-export default function PrimaryButton({ children }: PrimaryButtonProps) {
+
+export default function PrimaryButton({ children, onPress}: PrimaryButtonProps) {
+  function handleronpress(){
+    onPress()
+  }
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
@@ -16,7 +18,7 @@ export default function PrimaryButton({ children }: PrimaryButtonProps) {
             ? [styles.buttonInnerContainer, styles.pressed]
             : styles.buttonInnerContainer
         }
-        onPress={pressHandler}
+        onPress={handleronpress}
       >
         <Text style={styles.textButton}>{children}</Text>
       </Pressable>

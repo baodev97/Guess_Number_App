@@ -16,7 +16,7 @@ Getting started with the game logic
 
 Handling User Input & Showing an Alert Dialog
 
-Switching Screen Programmatically
+Switching Screen Programmatically 
 
 Starting Work on the game Screen
 
