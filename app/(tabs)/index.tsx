@@ -3,6 +3,7 @@ import StartGameScreen from "@/screen/StartGameScreen";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
 import { ImageBackground, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const [userNumber, setUserNumber]= useState<number>();
@@ -23,7 +24,9 @@ export default function HomeScreen() {
         resizeMode="cover"
         imageStyle={styles.backgroundImage}
       >
-       {screen}
+        <SafeAreaView style={styles.appContainer}>
+          {screen}
+        </SafeAreaView>
       </ImageBackground>
     </LinearGradient>
   );

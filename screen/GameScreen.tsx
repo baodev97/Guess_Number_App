@@ -17,8 +17,6 @@ export default function GameScreen(){
 const styles = StyleSheet.create({
     appContainer:{
         flex:1, 
-        justifyContent:'center',
-        alignItems:'center',
-        textAlign:'center'
+        padding:12
     }
 })
