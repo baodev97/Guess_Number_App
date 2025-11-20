@@ -15,6 +15,9 @@ Getting started with the game logic
 - game over screen : button re start game
 
 Handling User Input & Showing an Alert Dialog
+- Cho người dùng nhập - Lưu giá trị nhập useState
+- button reset ⇒ cho phép reset giá trị được lưu ở useState
+- button confirm ⇒ check giá trị nhập → chỉ cho phép nhận từ 0- 99
 
 Switching Screen Programmatically 
 
