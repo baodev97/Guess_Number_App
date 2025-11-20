@@ -3,7 +3,14 @@ import { StyleSheet, Text, View } from "react-native";
 export default function GameScreen(){
     return (
         <View style={styles.appContainer}>
-             <Text>Game Screen</Text>
+             <Text> Opponent&apos;s Guess</Text>
+             {/* GUESS */}
+             <View>
+                <Text>Higher or Lower?</Text>
+                {/* + */}
+                {/* - */}
+             </View>
+             {/* <View>Log Guess</View> */}
         </View>
     )
 }

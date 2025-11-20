@@ -13,6 +13,7 @@ export default function HomeScreen() {
   if(userNumber){
     screen = <GameScreen/>
   }
+  console.log(userNumber)
 
   return (
     <LinearGradient colors={["#E44631", "#ddb52f"]} style={styles.appContainer}>
