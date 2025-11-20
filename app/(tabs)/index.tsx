@@ -1,3 +1,4 @@
+import Colors from "@/constants/colors";
 import GameScreen from "@/screen/GameScreen";
 import StartGameScreen from "@/screen/StartGameScreen";
 import { LinearGradient } from "expo-linear-gradient";
@@ -17,7 +18,7 @@ export default function HomeScreen() {
   console.log(userNumber)
 
   return (
-    <LinearGradient colors={["#E44631", "#ddb52f"]} style={styles.appContainer}>
+    <LinearGradient colors={[Colors.primary600, Colors.accent500]} style={styles.appContainer}>
       <ImageBackground
         style={styles.appContainer}
         source={require("../../assets/images/riho-kroll-m4sGYaHYN5o-unsplash.jpg")}
