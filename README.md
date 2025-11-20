@@ -20,6 +20,11 @@ Handling User Input & Showing an Alert Dialog
 - button confirm ⇒ check giá trị nhập → chỉ cho phép nhận từ 0- 99
 
 Switching Screen Programmatically 
+- Logic Switching Screen Programmatically
+    - Đã được react native hỗ trợ - expo router
+    - Nhưng dùng logic thủ công để chuyển màn hình
+        - ĐIều kiện gì để chuyển màn hình ⇒ khi confirm số hợp lệ thì sẽ chuyển đến trang game Screen
+        - Có nhiều màn hình - làm sao kiểm soát chuyển đến màn nào?
 
 Starting Work on the game Screen
 
