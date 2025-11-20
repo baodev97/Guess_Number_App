@@ -23,8 +23,11 @@ Switching Screen Programmatically
 - Logic Switching Screen Programmatically
     - Đã được react native hỗ trợ - expo router
     - Nhưng dùng logic thủ công để chuyển màn hình
-        - ĐIều kiện gì để chuyển màn hình ⇒ khi confirm số hợp lệ thì sẽ chuyển đến trang game Screen
+        - Xác định vùng chưa logic hiển thị các screen
+        - ĐIều kiện gì để chuyển màn hình ⇒ khi confirm số hợp lệ thì sẽ chuyển đến trang game Screen (xác định được UserNumber)
         - Có nhiều màn hình - làm sao kiểm soát chuyển đến màn nào?
+            - khai báo biến chưa screen được hiển thị
+            - check điều kiện để gán lại screen - và cho hiển thị screen đó
 
 Starting Work on the game Screen
 
