@@ -13,7 +13,7 @@ export default function HomeScreen() {
   }
   let screen = <StartGameScreen handlerPickNumber={handlerPickNumber}/>
   if(userNumber){
-    screen = <GameScreen/>
+    screen = <GameScreen userNumber={userNumber}/>
   }
   console.log(userNumber)
 

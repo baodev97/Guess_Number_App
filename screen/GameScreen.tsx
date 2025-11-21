@@ -1,5 +1,8 @@
+import NumberContainer from "@/components/game/NumberContainer";
 import Title from "@/components/ui/Title";
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+
 
 type GenerateRandomNumber = {
     min:number,
@@ -16,13 +19,14 @@ function generateRandomBetween({min, max, exclude}:GenerateRandomNumber) {
   }
 }
 
-export default function GameScreen(){
-
+export default function GameScreen({userNumber}:{userNumber:number}){
+    const initialGuess = generateRandomBetween({min:1,max:100,exclude:userNumber})
+    const [guessNumber,setGuessNumber] = useState(initialGuess)
     return (
         <View style={styles.appContainer}>
              <Title>Opponent&apos;s Guess</Title>
              {/* GUESS */}
-             <Text></Text>
+             <NumberContainer>{guessNumber}</NumberContainer>
              <View>
                 <Text>Higher or Lower?</Text>
                 {/* + */}
