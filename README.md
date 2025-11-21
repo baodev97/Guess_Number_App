@@ -29,18 +29,24 @@ Switching Screen Programmatically
             - khai báo biến chưa screen được hiển thị
             - check điều kiện để gán lại screen - và cho hiển thị screen đó
 
-Starting Work on the game Screen
+Starting Work on the game Screen - Done
 
-Respecting Device Screen restrictions with the safeAreaView 
+Respecting Device Screen restrictions with the safeAreaView - Done
 
-Creating a title component 
+Creating a title component - Done
 
-managing colors globally 
+managing colors globally - Done 
 
-creating, Using & Displaying Random Numbers
+creating, Using & Displaying Random Numbers - Done
 
 Adding control Buttons (”+” & “-”) to the App
-
+    Logic:
+        - Máy random (number guess)
+        - Button gợi ý máy random gần hơn so với userNumber
+        - Khi click vào các button 
+            - Máy sẽ random lại theo tham số mới được truyền vào dựa vào gợi ý khi nhấn button
+            - Sẽ thông báo nếu user cố tình gợi ý sai
+        - styling area.
 checking for “Game Over”
 
 improving the game screen visuals
