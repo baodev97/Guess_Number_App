@@ -2,7 +2,7 @@ import NumberContainer from "@/components/game/NumberContainer";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import Title from "@/components/ui/Title";
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, Text, View } from "react-native";
 
 
 type GenerateRandomNumber = {
@@ -21,25 +21,24 @@ function generateRandomBetween({min, max, exclude}:GenerateRandomNumber) {
 }
 let minNumberInitial = 1;
 let maxNumberInitial = 100;
-console.log("check render lại");
+
 
 export default function GameScreen({userNumber}:{userNumber:number}){
     const initialGuess = generateRandomBetween({min:minNumberInitial,max:maxNumberInitial,exclude:userNumber})
     const [guessNumber,setGuessNumber] = useState(initialGuess)
-    console.log("check render", initialGuess)
 
     function handlerNextGuess (direction:string){ 
+        if((direction === 'lower' && userNumber > guessNumber || direction ==='gather' && userNumber< guessNumber)){
+            Alert.alert("Don't lie!", "I know you lie",[{text:'sorry'}])
+            return;
+        }
         if(direction === 'lower'){
             maxNumberInitial = guessNumber;
-            console.log(minNumberInitial,maxNumberInitial)
             const newRdNumber = generateRandomBetween({min:minNumberInitial,max:maxNumberInitial,exclude:userNumber})
-            console.log('check next guess number',newRdNumber)
             setGuessNumber(newRdNumber)
         }else{
             minNumberInitial = guessNumber +1;
-            console.log(minNumberInitial,maxNumberInitial)
             const newRdNumber = generateRandomBetween({min:minNumberInitial,max:maxNumberInitial,exclude:userNumber})
-            console.log('check next guess number',newRdNumber)
             setGuessNumber(newRdNumber)
         }
     }
