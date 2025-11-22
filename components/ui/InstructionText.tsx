@@ -3,12 +3,13 @@ import { ReactNode } from "react";
 import { StyleSheet, Text } from "react-native";
 
 type InstructionTextProps = {
-    children:ReactNode
+    children:ReactNode,
+    style?: object
 }
 
-export default function InstructionText ({children}:InstructionTextProps){
+export default function InstructionText ({children,style}:InstructionTextProps){
     return (
-        <Text style={styles.instructionText}>{children}</Text>
+        <Text style={[styles.instructionText, style]}>{children}</Text>
     )
 }
 const styles = StyleSheet.create({
