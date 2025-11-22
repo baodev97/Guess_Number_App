@@ -4,12 +4,15 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type PrimaryButtonProps = {
   children: ReactNode;
-  onPress:()=> void
+  onPress: () => void;
 };
 
-export default function PrimaryButton({ children, onPress}: PrimaryButtonProps) {
-  function handleronpress(){
-    onPress()
+export default function PrimaryButton({
+  children,
+  onPress,
+}: PrimaryButtonProps) {
+  function handleronpress() {
+    onPress();
   }
   return (
     <View style={styles.buttonOuterContainer}>

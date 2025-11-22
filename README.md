@@ -48,6 +48,9 @@ Adding control Buttons (”+” & “-”) to the App
             - Sẽ thông báo nếu user cố tình gợi ý sai
         - styling area.
 checking for “Game Over”
+    Logic:
+        - Điều kiện để Game Over ?
+        - 
 
 improving the game screen visuals
 

@@ -3,12 +3,12 @@ import Colors from "@/constants/colors";
 import { useState } from "react";
 import { Alert, StyleSheet, TextInput, View } from "react-native";
 type StartGameScreenProps = {
-  handlerPickNumber:(pickNumber:number)=>void
-}
+  handlerPickNumber: (pickNumber: number) => void;
+};
 
-
-
-export default function StartGameScreen({handlerPickNumber}:StartGameScreenProps) {
+export default function StartGameScreen({
+  handlerPickNumber,
+}: StartGameScreenProps) {
   const [enterNumber, setEnterNumber] = useState("");
   function handlerEnterNumber(enterNumber: string) {
     setEnterNumber(enterNumber);
@@ -22,11 +22,13 @@ export default function StartGameScreen({handlerPickNumber}:StartGameScreenProps
   function handlerCofirm(enterNumber: string) {
     const numberInput = parseInt(enterNumber);
     if (isNaN(numberInput) || numberInput < 0 || numberInput > 99) {
-      Alert.alert("Number isn't valid", "Confirm",[{text:'OK', onPress:handlerReset}]);
-    }else{
-      handlerPickNumber(numberInput)
+      Alert.alert("Number isn't valid", "Confirm", [
+        { text: "OK", onPress: handlerReset },
+      ]);
+    } else {
+      handlerPickNumber(numberInput);
     }
-    
+
     console.log("confirm");
   }
   return (
