@@ -56,6 +56,9 @@ checking for “Game Over”
         - Hiểu Flow khi máy guess number - màn hình game screen sẽ như nào? 
         
 improving the game screen visuals
+    - Add title on Start Game Screen
+    - Create Card component to reuse 
+    - Create InstructionText to reuse
 
 Using “Cascading styles”
 
