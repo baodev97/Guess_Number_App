@@ -1,7 +1,7 @@
 import NumberContainer from "@/components/game/NumberContainer";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import Title from "@/components/ui/Title";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, StyleSheet, Text, View } from "react-native";
 
 type GenerateRandomNumber = {
@@ -9,6 +9,10 @@ type GenerateRandomNumber = {
   max: number;
   exclude: number;
 };
+type GameScreenProps= {
+    userNumber:number,
+    handlerGameOver:()=>void
+}
 
 function generateRandomBetween({ min, max, exclude }: GenerateRandomNumber) {
   const rndNum = Math.floor(Math.random() * (max - min) + min);
@@ -21,12 +25,13 @@ function generateRandomBetween({ min, max, exclude }: GenerateRandomNumber) {
 let minNumberInitial = 1;
 let maxNumberInitial = 100;
 
-export default function GameScreen({ userNumber }: { userNumber: number }) {
+export default function GameScreen({ userNumber,handlerGameOver }: GameScreenProps) {
   const initialGuess = generateRandomBetween({
     min: minNumberInitial,
     max: maxNumberInitial,
     exclude: userNumber,
   });
+  console.log("re render")
   const [guessNumber, setGuessNumber] = useState(initialGuess);
 
   function handlerNextGuess(direction: string) {
@@ -39,22 +44,21 @@ export default function GameScreen({ userNumber }: { userNumber: number }) {
     }
     if (direction === "lower") {
       maxNumberInitial = guessNumber;
-      const newRdNumber = generateRandomBetween({
-        min: minNumberInitial,
-        max: maxNumberInitial,
-        exclude: userNumber,
-      });
-      setGuessNumber(newRdNumber);
     } else {
       minNumberInitial = guessNumber + 1;
-      const newRdNumber = generateRandomBetween({
+    }
+    const newRdNumber = generateRandomBetween({
         min: minNumberInitial,
         max: maxNumberInitial,
         exclude: userNumber,
       });
       setGuessNumber(newRdNumber);
-    }
   }
+  useEffect(()=>{
+    if(userNumber === guessNumber){
+        handlerGameOver();
+    }
+  },[guessNumber,userNumber,handlerGameOver])
   return (
     <View style={styles.appContainer}>
       <Title>Opponent&apos;s Guess</Title>

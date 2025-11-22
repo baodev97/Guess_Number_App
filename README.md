@@ -49,9 +49,12 @@ Adding control Buttons (”+” & “-”) to the App
         - styling area.
 checking for “Game Over”
     Logic:
-        - Điều kiện để Game Over ?
-        - 
-
+        - Điều kiện để chuyển sang màn hình game over
+        - Khi máy tính đoán số theo gợi ý đến một lúc nó sẽ đoán được đúng số
+        - điều kiện đúng số là --  userNumber === guessNumber - Phương án dùng useEffect để thực thi việc kiểm tra (khi dependencie thay đổi useEffect sẽ được thực thi)
+        - Khi đoán đúng số rồi thì phải chuyển sang màn hình game over
+        - Hiểu Flow khi máy guess number - màn hình game screen sẽ như nào? 
+        
 improving the game screen visuals
 
 Using “Cascading styles”
