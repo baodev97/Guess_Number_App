@@ -1,4 +1,5 @@
 import NumberContainer from "@/components/game/NumberContainer";
+import Card from "@/components/ui/Card";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import Title from "@/components/ui/Title";
 import { useEffect, useState } from "react";
@@ -66,7 +67,7 @@ export default function GameScreen({
     <View style={styles.appContainer}>
       <Title>Opponent&apos;s Guess</Title>
       <NumberContainer>{guessNumber}</NumberContainer>
-      <View>
+      <Card>
         <Text>Higher or Lower?</Text>
         <PrimaryButton onPress={() => handlerNextGuess("lower")}>
           -
@@ -74,7 +75,7 @@ export default function GameScreen({
         <PrimaryButton onPress={() => handlerNextGuess("gather")}>
           +
         </PrimaryButton>
-      </View>
+      </Card>
       {/* <View>Log Guess</View> */}
     </View>
   );
