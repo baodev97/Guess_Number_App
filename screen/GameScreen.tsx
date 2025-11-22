@@ -1,9 +1,10 @@
 import NumberContainer from "@/components/game/NumberContainer";
 import Card from "@/components/ui/Card";
+import InstructionText from "@/components/ui/InstructionText";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import Title from "@/components/ui/Title";
 import { useEffect, useState } from "react";
-import { Alert, StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 
 type GenerateRandomNumber = {
   min: number;
@@ -68,7 +69,7 @@ export default function GameScreen({
       <Title>Opponent&apos;s Guess</Title>
       <NumberContainer>{guessNumber}</NumberContainer>
       <Card>
-        <Text>Higher or Lower?</Text>
+        <InstructionText>Higher Or Lower</InstructionText>
         <PrimaryButton onPress={() => handlerNextGuess("lower")}>
           -
         </PrimaryButton>
