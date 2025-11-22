@@ -41,8 +41,8 @@ export default function GameScreen({
 
   function handlerNextGuess(direction: string) {
     if (
-      ((direction === "lower") && (userNumber > guessNumber)) ||
-      ((direction === "gather") && (userNumber < guessNumber))
+      (direction === "lower" && userNumber > guessNumber) ||
+      (direction === "gather" && userNumber < guessNumber)
     ) {
       Alert.alert("Don't lie!", "I know you lie", [{ text: "sorry" }]);
       return;
@@ -55,7 +55,7 @@ export default function GameScreen({
     const newRdNumber = generateRandomBetween({
       min: minNumberInitial,
       max: maxNumberInitial,
-      exclude:guessNumber,
+      exclude: guessNumber,
     });
     setGuessNumber(newRdNumber);
   }
@@ -69,13 +69,21 @@ export default function GameScreen({
       <Title>Opponent&apos;s Guess</Title>
       <NumberContainer>{guessNumber}</NumberContainer>
       <Card>
-        <InstructionText style={styles.instructionText}>Higher Or Lower</InstructionText>
-        <PrimaryButton onPress={() => handlerNextGuess("lower")}>
-          -
-        </PrimaryButton>
-        <PrimaryButton onPress={() => handlerNextGuess("gather")}>
-          +
-        </PrimaryButton>
+        <InstructionText style={styles.instructionText}>
+          Higher Or Lower
+        </InstructionText>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={() => handlerNextGuess("lower")}>
+              -
+            </PrimaryButton>
+          </View>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={() => handlerNextGuess("gather")}>
+              +
+            </PrimaryButton>
+          </View>
+        </View>
       </Card>
       {/* <View>Log Guess</View> */}
     </View>
@@ -86,7 +94,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
   },
-  instructionText:{
-    marginBottom:12
-  }
+  instructionText: {
+    marginBottom: 12,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
+  },
 });
