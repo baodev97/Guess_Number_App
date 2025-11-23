@@ -5,7 +5,7 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 import Title from "@/components/ui/Title";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useEffect, useState } from "react";
-import { Alert, StyleSheet, View } from "react-native";
+import { Alert, StyleSheet, Text, View } from "react-native";
 
 
 type GenerateRandomNumber = {
@@ -41,8 +41,8 @@ export default function GameScreen({
       exclude: userNumber,
     });
   });
-  console.log(userNumber,"check user number") 
-  console.log(guessNumber,"check guess number") 
+  
+  const [guessRounds,setGuessRounds] = useState<number[]>([guessNumber])
 
 
   function handlerNextGuess(direction: string) {
@@ -64,6 +64,7 @@ export default function GameScreen({
       exclude: guessNumber,
     });
     setGuessNumber(newRdNumber);
+    setGuessRounds(prevGuessRounds=>[newRdNumber,...prevGuessRounds])
   }
   useEffect(() => {
     if (userNumber === guessNumber) {
@@ -97,6 +98,7 @@ export default function GameScreen({
         </View>
       </Card>
       {/* <View>Log Guess</View> */}
+      {guessRounds.map(guess=><Text key={guess}>{guess}</Text>)}
     </View>
   );
 }

@@ -77,6 +77,7 @@ Using & styling Nested Component
 Adding Logic to reStart Games & Display a Summary Screen
 
 Logging Game Rounds
+ - Add logic logging gmae round
 
 Outputting Log Data with FlatList 
 
