@@ -48,22 +48,36 @@ Adding control Buttons (”+” & “-”) to the App
             - Sẽ thông báo nếu user cố tình gợi ý sai
         - styling area.
 checking for “Game Over”
-
+    Logic:
+        - Điều kiện để chuyển sang màn hình game over
+        - Khi máy tính đoán số theo gợi ý đến một lúc nó sẽ đoán được đúng số
+        - điều kiện đúng số là --  userNumber === guessNumber - Phương án dùng useEffect để thực thi việc kiểm tra (khi dependencie thay đổi useEffect sẽ được thực thi)
+        - Khi đoán đúng số rồi thì phải chuyển sang màn hình game over
+        - Hiểu Flow khi máy guess number - màn hình game screen sẽ như nào? 
+        
 improving the game screen visuals
+    - Add title on Start Game Screen
+    - Create Card component to reuse 
+    - Create InstructionText to reuse
+
 
 Using “Cascading styles”
-
+    - Truyền style thông qua props, Cascading styles thông qua mãng, tính chất xếp tầng của CSS.
 Working with Icons
+    - using Expo Vector Icons 
 
-Adding & Using Custom Fronts with React Native Apps
+Adding & Using Custom Fonts with React Native Apps
+    - using expo - fonts
 
 Adding a (Foreground) Image
+    - dev game over screen
 
 Using & styling Nested Component
 
 Adding Logic to reStart Games & Display a Summary Screen
 
 Logging Game Rounds
+ - Add logic logging gmae round
 
 Outputting Log Data with FlatList 
 
