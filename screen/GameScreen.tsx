@@ -33,13 +33,17 @@ export default function GameScreen({
   userNumber,
   handlerGameOver,
 }: GameScreenProps) {
-  const [guessNumber, setGuessNumber] = useState(() => {
-    return generateRandomBetween({
+  
+  const [guessNumber, setGuessNumber] = useState(()=>{
+   return generateRandomBetween({
       min: minNumberInitial,
       max: maxNumberInitial,
       exclude: userNumber,
     });
   });
+  console.log(userNumber,"check user number") 
+  console.log(guessNumber,"check guess number") 
+
 
   function handlerNextGuess(direction: string) {
     if (
@@ -66,6 +70,11 @@ export default function GameScreen({
       handlerGameOver();
     }
   }, [guessNumber, userNumber, handlerGameOver]);
+  useEffect(()=>{
+    minNumberInitial =1;
+    maxNumberInitial = 100;
+  },[])
+  console.log(minNumberInitial,maxNumberInitial);
   return (
     <View style={styles.appContainer}>
       <Title>Opponent&apos;s Guess</Title>
