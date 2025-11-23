@@ -64,6 +64,7 @@ improving the game screen visuals
 Using “Cascading styles”
     - Truyền style thông qua props, Cascading styles thông qua mãng, tính chất xếp tầng của CSS.
 Working with Icons
+    - using Expo Vector Icons 
 
 Adding & Using Custom Fronts with React Native Apps
 
