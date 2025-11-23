@@ -1,3 +1,4 @@
+import GuessLogItem from "@/components/game/GuessLogItem";
 import NumberContainer from "@/components/game/NumberContainer";
 import Card from "@/components/ui/Card";
 import InstructionText from "@/components/ui/InstructionText";
@@ -5,7 +6,7 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 import Title from "@/components/ui/Title";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useEffect, useState } from "react";
-import { Alert, FlatList, StyleSheet, Text, View } from "react-native";
+import { Alert, FlatList, StyleSheet, View } from "react-native";
 
 type GenerateRandomNumber = {
   min: number;
@@ -72,7 +73,7 @@ export default function GameScreen({
     minNumberInitial = 1;
     maxNumberInitial = 100;
   }, []);
-  console.log(minNumberInitial, maxNumberInitial);
+  const guessListLenght  = guessRounds.length
   return (
     <View style={styles.appContainer}>
       <Title>Opponent&apos;s Guess</Title>
@@ -99,7 +100,7 @@ export default function GameScreen({
       <View>
         <FlatList<number>
           data={guessRounds}
-          renderItem={(itemData)=> <Text>{itemData.item}</Text>}
+          renderItem={(itemData)=> <GuessLogItem roundNumber={guessListLenght - itemData.index} guessNumber={itemData.item}></GuessLogItem>}
           keyExtractor={(item)=>item.toString()}
         />
       </View>
