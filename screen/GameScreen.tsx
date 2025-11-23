@@ -15,7 +15,7 @@ type GenerateRandomNumber = {
 };
 type GameScreenProps = {
   userNumber: number;
-  handlerGameOver: () => void;
+  handlerGameOver: (numerOfRounds:number) => void;
 };
 
 function generateRandomBetween({ min, max, exclude }: GenerateRandomNumber) {
@@ -66,9 +66,9 @@ export default function GameScreen({
   }
   useEffect(() => {
     if (userNumber === guessNumber) {
-      handlerGameOver();
+      handlerGameOver(guessRounds.length);
     }
-  }, [guessNumber, userNumber, handlerGameOver]);
+  }, [guessNumber, userNumber, handlerGameOver, guessRounds.length]);
   useEffect(() => {
     minNumberInitial = 1;
     maxNumberInitial = 100;
@@ -97,7 +97,7 @@ export default function GameScreen({
       </Card>
       {/* <View>Log Guess</View> */}
       {/* {guessRounds.map(guess=><Text key={guess}>{guess}</Text>)} */}
-      <View>
+      <View style={styles.listContainer}>
         <FlatList<number>
           data={guessRounds}
           renderItem={(itemData)=> <GuessLogItem roundNumber={guessListLenght - itemData.index} guessNumber={itemData.item}></GuessLogItem>}
@@ -121,4 +121,8 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
   },
+  listContainer:{
+    flex:1,
+    padding:16
+  }
 });

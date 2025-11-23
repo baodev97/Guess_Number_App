@@ -30,9 +30,11 @@ export default function HomeScreen() {
     setUserNumber(pickNumber);
     setIsGameOver(false);
   }
-  function handlerGameOver(){
+  function handlerGameOver(numberOfRounds:number){
     setIsGameOver(true);
+    setGuessRounds(numberOfRounds)
   }
+  
 
   function handlerOnStartNewgame(){
     setUserNumber(NaN);
