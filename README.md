@@ -70,6 +70,7 @@ Adding & Using Custom Fonts with React Native Apps
     - using expo - fonts
 
 Adding a (Foreground) Image
+    - dev game over screen
 
 Using & styling Nested Component
 
