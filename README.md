@@ -85,3 +85,16 @@ Styling the game Round Logs
 
 Finishing Touches
 
+---------------------------------
+Building Adaptive User Interfaces
+ - Module Introduction
+ - Setting Dynamic Widths
+ - Introducing the Dinmensons API
+ - Adjusting Image Sizes with the Dimensions API
+ - Understanding Screen. Orientations Problems
+ - setting Sizes Dynamically ( for different Orientations)
+ - Managing Screen Content with KeyboardAvoidingview
+ - Improving the Landscape Mode UI
+ - Further improvements with useWindowDimensions
+ - Writing Platform-specific Code with the Platform API
+ - Styling the Status Bar
