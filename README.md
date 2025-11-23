@@ -66,7 +66,8 @@ Using “Cascading styles”
 Working with Icons
     - using Expo Vector Icons 
 
-Adding & Using Custom Fronts with React Native Apps
+Adding & Using Custom Fonts with React Native Apps
+    - using expo - fonts
 
 Adding a (Foreground) Image
 
