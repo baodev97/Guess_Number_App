@@ -1,6 +1,6 @@
 import Colors from '@/constants/colors';
 import { ReactNode } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
 type Cardprops = {
     children: ReactNode
 }
@@ -10,12 +10,14 @@ export default function Card({children}:Cardprops){
         <View style={styles.cardContainer}>{children}</View>
     )
 }
+const deviceWidth = Dimensions.get('screen').width;
+
 
 const styles = StyleSheet.create({
     cardContainer: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "5%",
+    marginTop: deviceWidth < 380 ? "2%":"5%",
     marginHorizontal: 24,
     padding: 24,
     borderRadius: 8,

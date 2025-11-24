@@ -95,6 +95,7 @@ Building Adaptive User Interfaces
  - Setting Dynamic Widths
     - using maxWidth, minWidth, maxHeight, minHeight -- dynamic width, height by devices.
  - Introducing the Dinmensons API
+    - Using Dinmensons API => check Width devices - add conditional to custom
  - Adjusting Image Sizes with the Dimensions API
  - Understanding Screen. Orientations Problems
  - setting Sizes Dynamically ( for different Orientations)
