@@ -88,7 +88,12 @@ Finishing Touches
 ---------------------------------
 Building Adaptive User Interfaces
  - Module Introduction
+    - Building Cross-Platform & Device User Interfaces
+        - Execute Platform - specific Code
+        - Adjust Different Device Sizes
+        - Build Adaptive Components
  - Setting Dynamic Widths
+    - using maxWidth, minWidth, maxHeight, minHeight -- dynamic width, height by devices.
  - Introducing the Dinmensons API
  - Adjusting Image Sizes with the Dimensions API
  - Understanding Screen. Orientations Problems
