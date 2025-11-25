@@ -103,4 +103,6 @@ Building Adaptive User Interfaces
  - Improving the Landscape Mode UI
  - Further improvements with useWindowDimensions
  - Writing Platform-specific Code with the Platform API
+    - Using Platform API
+    - Sử dụng cách đặt tên file để code được thực thi cho từng device
  - Styling the Status Bar
