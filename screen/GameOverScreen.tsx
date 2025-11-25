@@ -4,12 +4,16 @@ import Colors from "@/constants/colors";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 
 type GameOverScreenProps = {
-    userNumber:number,
-    guessRounds:number,
-    onStartNewgame:()=> void
-}
+  userNumber: number;
+  guessRounds: number;
+  onStartNewgame: () => void;
+};
 
-export default function GameOverScreen({userNumber,guessRounds,onStartNewgame}:GameOverScreenProps) {
+export default function GameOverScreen({
+  userNumber,
+  guessRounds,
+  onStartNewgame,
+}: GameOverScreenProps) {
   return (
     <View style={styles.rootContainer}>
       <Title>GAME OVER!</Title>
@@ -20,15 +24,22 @@ export default function GameOverScreen({userNumber,guessRounds,onStartNewgame}:G
         />
       </View>
       <Text style={styles.sumaryText}>
-        Your phone needed <Text style={styles.highlight}>{guessRounds}</Text> rounds to
-        guess the number <Text style={styles.highlight}>{userNumber}</Text>.
+        Your phone needed <Text style={styles.highlight}>{guessRounds}</Text>{" "}
+        rounds to guess the number{" "}
+        <Text style={styles.highlight}>{userNumber}</Text>.
       </Text>
-      <PrimaryButton onPress={()=>{onStartNewgame()}}>Start New Game</PrimaryButton>
+      <PrimaryButton
+        onPress={() => {
+          onStartNewgame();
+        }}
+      >
+        Start New Game
+      </PrimaryButton>
     </View>
   );
 }
 
-const deviceWidth = Dimensions.get('screen').width
+const deviceWidth = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
   rootContainer: {
@@ -37,9 +48,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    width: deviceWidth <380 ? 150: 300,
-    height: deviceWidth <380 ? 150: 300,
-    borderRadius: deviceWidth <380 ? 75: 150,
+    width: deviceWidth < 380 ? 150 : 300,
+    height: deviceWidth < 380 ? 150 : 300,
+    borderRadius: deviceWidth < 380 ? 75 : 150,
     borderWidth: 3,
     borderColor: Colors.primary800,
     overflow: "hidden",
