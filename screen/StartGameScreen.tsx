@@ -1,6 +1,7 @@
 import Card from "@/components/ui/Card";
 import InstructionText from "@/components/ui/InstructionText";
 import PrimaryButton from "@/components/ui/PrimaryButton";
+// eslint-disable-next-line import/no-unresolved
 import Title from "@/components/ui/Title";
 import Colors from "@/constants/colors";
 import { useState } from "react";

@@ -1,13 +1,14 @@
 import PrimaryButton from "@/components/ui/PrimaryButton";
+// eslint-disable-next-line import/no-unresolved
 import Title from "@/components/ui/Title";
 import Colors from "@/constants/colors";
 import {
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    View,
-    useWindowDimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
 } from "react-native";
 
 type GameOverScreenProps = {

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Platform, StyleSheet, Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import Colors from "../../constants/colors";
 
 type TitleProps = {
@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     // fontWeight: "bold",
     color: Colors.white,
     // borderWidth: Platform.OS === 'android'?2:0,
-    borderWidth:Platform.select({ios:0,android:2}),
+    // borderWidth:Platform.select({ios:0,android:2}),
+    borderWidth:0,
     borderColor: Colors.white,
     textAlign: "center",
     padding: 12,
